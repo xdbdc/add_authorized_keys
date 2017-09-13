@@ -1,0 +1,22 @@
+{
+  "name": "add_authorized_keys",
+  "version": "1.0.0",
+  "description": "Add authorized_keys online for organization public members.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xdbdc/add_authorized_keys.git"
+  },
+  "keywords": [
+    "authorized_keys"
+  ],
+  "author": "xiao555",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xdbdc/add_authorized_keys/issues"
+  },
+  "homepage": "https://github.com/xdbdc/add_authorized_keys#readme"
+}
