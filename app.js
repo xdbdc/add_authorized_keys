@@ -9,8 +9,8 @@ const port = 3000;
 const app = new Koa()
 const router = new Router()
 
-const client_id = 'e2ac1e8fba3c7ac98316'
-const client_secret = 'ae2a51affcc57dbe3e24200ef4c719573df39296'
+const client_id = ''
+const client_secret = ''
 const get_access_token_url = 'https://github.com/login/oauth/access_token?client_id='
 const get_user_info_url = 'https://api.github.com/user?access_token='
 const access_token_reg = /access_token=(\w+)/
@@ -47,7 +47,6 @@ app.use(views(__dirname + '/views', {
 
 router
   .get('/', async (ctx, next) => {
-    console.log('home')
     await ctx.render('index')
     ctx.status = 200
   })
@@ -73,7 +72,8 @@ router
     } else {
       await ctx.render('message', {
         message: `
-          Sorry, you are not the memeber of our organization in Github!</br>
+          Sorry, you are not the public memeber of our organization in Github!</br>
+          If you are the member, please change your Membership to public.</br>
           If you want to join us, please join our QQ group: 661565883.
         `
       })
@@ -83,10 +83,10 @@ router
   .post('/add_key', async (ctx, next) => {
     try {
       let keys = ctx.request.body.keys
-      let content = fs.readFileSync(path.resolve(__dirname, 'keys.cache'), 'utf-8')
+      let file = '/home/xdbdc/.ssh/authorized_keys'
+      let content = fs.readFileSync(file, 'utf-8')
       content += content ? '\n\n' + keys : keys
-      console.log(content)
-      await fs.writeFile(path.resolve(__dirname, 'keys.cache'), content, async err => {
+      await fs.writeFile(file, content, async err => {
         if (err) throw err
       });
       await ctx.render('message', {
