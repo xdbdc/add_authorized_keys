@@ -18,5 +18,18 @@
   "bugs": {
     "url": "https://github.com/xdbdc/add_authorized_keys/issues"
   },
-  "homepage": "https://github.com/xdbdc/add_authorized_keys#readme"
+  "homepage": "https://github.com/xdbdc/add_authorized_keys#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.2.1",
+    "koa-views": "^6.0.2",
+    "nunjucks": "^3.0.1",
+    "request": "^2.81.0"
+  }
 }
